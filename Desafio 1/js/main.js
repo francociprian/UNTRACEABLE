@@ -4,11 +4,11 @@ let continuar = ""
 let precioFinal = 0
 
 
-function Agregado() {
+function agregado() {
     console.log(`Agregaste ${carrito} x ${cantidad} a tu carrito.`);
 }
  
-function Cantidad() {
+function cantidad() {
     cantidad = Number(prompt("¿Cuantas unidades te gustaría agregar?"));
 }
 
@@ -39,19 +39,19 @@ do {
                 carrito = prompt("¿Que quieres agregar al carrito?");
                 switch (carrito) {
                     case "gorra":
-                        Cantidad()
+                        cantidad()
                         precioFinal += 15 * cantidad
-                        Agregado()
+                        agregado()
                         break
                     case "remera":
-                        Cantidad()
+                        cantidad()
                         precioFinal += 35 * cantidad
-                        Agregado()
+                        agregado()
                         break
                     case "buzo":
-                        Cantidad()
+                        cantidad()
                         precioFinal += 60 * cantidad
-                        Agregado()
+                        agregado()
                         break
                     default:
                         alert("Ingresa un producto valido.")
