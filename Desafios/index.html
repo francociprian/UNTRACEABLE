@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pushbar.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>PRIMERA ENTREGA DEL PROYECTO FINAL</title>
+
+    <title>Proyecto Carrito</title>
 </head>
+
 <body>
-    <main>
-        <h1 class="titulo">Catálogo de Productos</h1>
-        <div class="contenedor">
-            <div class="producto">
-                <img src="img/remera.jpg" alt="Remera">
-                <p>Remera</p>
-                <a href="#">&dollar;35</a>
-            </div>
-            <div class="producto">
-                <img src="img/buzo.jpg" alt="Buzo">
-                <p>Buzo</p>
-                <a href="#">&dollar;60</a>
-            </div>
-            <div class="producto">
-                <img src="img/campera.jpg" alt="Camperas">
-                <p>Campera</p>
-                <a href="#">&dollar;110</a>
-            </div>
-            <div class="producto">
-                <img src="img/gorra.jpg" alt="Gorra">
-                <p>Gorra</p>
-                <a href="#">&dollar;15</a>
-            </div>
-            <div class="producto">
-                <img src="img/pantalon.jpg" alt="Pantalon">
-                <p>Pantalon</p>
-                <a href="#">&dollar;75</a>
-            </div>
-            <div class="producto">
-                <img src="img/zapatillas.jpg" alt="Sneakers">
-                <p>Sneakers</p>
-                <a href="#">&dollar;90</a>
-            </div>
+    <header>
+        <nav class="menu menu--layout">
+            <a href="#" class="menu__logo">
+                Untraceable&period;
+            </a>
+
+            <ul class="menu__btn">
+                <li>
+                    <a href="#" data-pushbar-target="pushbar-carrito">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="stock">Catalogo de Productos</h2>
+        <div class="stock__productos">
+
         </div>
+
+        <div data-pushbar-id="pushbar-carrito" data-pushbar-direction="right" class="pushbar pushbar-carrito">
+            <div class="btn-cerrar izquierda">
+                <button data-pushbar-close><i class="fas fa-times"></i></button>
+                <button class="limpiar">Limpiar Carrito</button>
+            </div>
+
+            <div class="carrito">
+                <h3 class="carrito__nombre">Agregaste al Carrito:</h3>
+                <p class="carrito__cantidad"></p>
+            </div>
+            <div class="carrito__container">
+
+
+            </div>
+            <p class="carrito__total"></p>
+        </div>
+
     </main>
 
 
-    <script defer src="js/main.js"></script>
 
+    <script src="https://kit.fontawesome.com/d5f1493466.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/pushbar.js"></script>
+    <script defer src="js/main.js"></script>
+    <script type="text/javascript">
+        const pushbar = new Pushbar({
+            blur: true,
+            overlay: true,
+        });
+    </script>
 </body>
+
 </html>

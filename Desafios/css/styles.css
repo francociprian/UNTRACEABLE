@@ -1,68 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #868686;
-    height: 100vh;
     display: flex;
     justify-content: center;
 }
-main{
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* BARRA DE NAVEGACION */
+header {
+    background-color: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    z-index: 999;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu--layout {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.menu__logo {
+    font-size: 2em;
+    font-family: "Alfa Slab One", cursive;
+    line-height: 65px;
+    letter-spacing: 1.5px;
+    padding: 0 0.5rem;
+}
+
+.menu__logo:hover {
+    color: #e93e74;
+}
+
+.menu__btn {
+    width: 100px;
+    background-color: #141414;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    line-height: 65px;
+    display: flex;
+}
+
+.menu__btn a {
+    padding-right: 1rem;
+}
+
+.menu__btn a:hover {
+    color: #e93e74;
+}
+
+/* CONTENIDO */
+
+.container {
+    width: 100%;
+    padding: 4.5rem 0;
     display: flex;
     flex-direction: column;
-    
-}
-main .titulo {
-    font-size: 2.2em;
-    padding: 1rem;
-}
-
-main .contenedor {
-    height: 80vh;
-    width: 80vw;
-    border-radius: 30px;
-
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-main .contenedor .producto {
+.stock {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+}
+
+.stock__productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.stock__card {
     text-align: center;
-    padding-top: 50px;
-    color: aliceblue;
+    border: 1.5px solid black;
+    border-radius: 6px;
+    padding-bottom: 5px;
 }
 
-main .contenedor .producto img {
+.stock__card--image {
     width: 300px;
-    border-radius: 15px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
-main .contenedor .producto p {
-    font-size: 2.2em;
-    padding-bottom: 15px;
+.stock__card--nombre {
+    font-size: 1.3em;
+    color: aliceblue;
+    padding: 10px 35px;
 }
 
-main .contenedor .producto a {
-    font-size: 1.5em;
+.stock__card--btn {
     color: aliceblue;
     text-decoration: none;
-    border: 1px solid white;
+    border: 1px solid aliceblue;
     border-radius: 5px;
     padding: 5px 35px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.stock__card--btn:hover {
+    background-color: #e93e74;
+    border: 1px solid #141414;
+    color: #141414;
 }
 
-main .contenedor .producto a:hover {
-    background: #333232;
+/* BUTTON LIMPIAR CARRITO */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
 }
 
-.dom {
-    width: 80vw;
+.limpiar {
+    border: 1px solid aliceblue;
+    padding: 7px 30px;
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+/* CARRITO NOMBRE, CANTIDAD, TOTAL */
+.carrito {
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito__nombre {
     text-align: center;
+    color: white;
     font-size: 2.2em;
+    padding: 1rem 1rem;
+
+}
+
+.carrito__cantidad {
+    text-align: left;
+    font-size: 1.2em;
+    padding: 2rem 1rem;
+}
+
+.carrito__total {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 2rem 1rem;
+}
+
+/* ESTILO CONTENEDOR CARRITO */
+.carrito__container {
+    padding-bottom: 3rem;
+}
+
+.carrito__card {
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid aliceblue;
+}
+
+.carrito__card--image {
+    width: 150px;
+}
+
+
+/* OVERLAY CARRITO */
+.pushbar-carrito {
+    z-index: 99999;
+    background-color: #141414;
+    color: white;
+}
+.pushbar-carrito .btn-cerrar {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.pushbar-carrito .fa-times {
+    padding: 0.5rem 1rem;
+    background-color: #141414;
+    color: white;
+    font-size: 1.4rem;
 }

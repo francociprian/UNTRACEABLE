@@ -1,3 +1,239 @@
+// VARIABLES
+const stockProductos = [{
+    id: 1,
+    name: "Gorra",
+    img: "../img/gorra.jpg",
+    price: 15,
+    size: " "
+},
+{
+    id: 2,
+    name: "Remera S",
+    img: "../img/remera.jpg",
+    price: 35,
+    size: "S"
+},
+{
+    id: 3,
+    name: "Remera M",
+    img: "../img/remera.jpg",
+    price: 35,
+    size: "M"
+},
+{
+    id: 4,
+    name: "Remera L",
+    img: "../img/remera.jpg",
+    price: 35,
+    size: "L"
+},
+{
+    id: 5,
+    name: "Remera XL",
+    img: "../img/remera.jpg",
+    price: 35,
+    size: "XL"
+},
+{
+    id: 6,
+    name: "Buzo S",
+    img: "../img/buzo.jpg",
+    price: 60,
+    size: "S"
+},
+{
+    id: 7,
+    name: "Buzo M",
+    img: "../img/buzo.jpg",
+    price: 60,
+    size: "M"
+},
+{
+    id: 8,
+    name: "Buzo L",
+    img: "../img/buzo.jpg",
+    price: 60,
+    size: "L"
+},
+{
+    id: 9,
+    name: "Buzo XL",
+    img: "../img/buzo.jpg",
+    price: 60,
+    size: "XL"
+},
+{
+    id: 10,
+    name: "Campera S",
+    img: "../img/campera.jpg",
+    price: 110,
+    size: "S"
+},
+{
+    id: 11,
+    name: "Campera M",
+    img: "../img/campera.jpg",
+    price: 110,
+    size: "M"
+},
+{
+    id: 12,
+    name: "Campera L",
+    img: "../img/campera.jpg",
+    price: 110,
+    size: "L"
+},
+{
+    id: 13,
+    name: "Campera XL",
+    img: "../img/campera.jpg",
+    price: 110,
+    size: "XL"
+},
+{
+    id: 14,
+    name: "Pantalon S",
+    img: "../img/pantalon.jpg",
+    price: 75,
+    size: "S"
+},
+{
+    id: 15,
+    name: "Pantalon M",
+    img: "../img/pantalon.jpg",
+    price: 75,
+    size: "M"
+},
+{
+    id: 16,
+    name: "Pantalon L",
+    img: "../img/pantalon.jpg",
+    price: 75,
+    size: "L"
+},
+{
+    id: 17,
+    name: "Pantalon XL",
+    img: "../img/pantalon.jpg",
+    price: 75,
+    size: "XL"
+},
+{
+    id: 18,
+    name: "Sneakers",
+    img: "../img/zapatillas.jpg",
+    price: 90,
+    size: " "
+}
+];
+const contenedorProductos = document.querySelector('.stock__productos');
+const contenedorCarrito = document.querySelector('.carrito__container');
+const limpiarCarrito = document.querySelector('.limpiar');
+const cantidadCarrito = document.querySelector('.carrito__cantidad');
+const totalCarrito = document.querySelector('.carrito__total');
+
+let carrito = [];
+
+// EVENTOS
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarProductos();
+});
+
+limpiarCarrito.addEventListener('click', limpiarElCarrito);
+
+// FUNCIONES
+showCartAlert = () => {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    Toast.fire({
+        icon: 'success',
+        title: 'Se Agrego al Carrito'
+    })
+}
+
+
+mostrarProductos = () => {
+    for (const producto of stockProductos) {
+        const divProducto = document.createElement('div');
+        divProducto.classList.add('stock__card');
+
+        const imgProducto = document.createElement('img');
+        imgProducto.classList.add('stock__card--image');
+        imgProducto.src = producto.img;
+
+        const nombreProducto = document.createElement('h2');
+        nombreProducto.classList.add('stock__card--nombre');
+        nombreProducto.textContent = producto.name;
+
+        const btnAgregarProducto = document.createElement('button');
+        btnAgregarProducto.classList.add('stock__card--btn');
+        btnAgregarProducto.textContent = `$${producto.price}`;
+        btnAgregarProducto.onclick = () => {
+            agregarAlCarrito(producto.id);
+            showCartAlert();
+        }
+
+        divProducto.appendChild(imgProducto);
+        divProducto.appendChild(nombreProducto);
+        divProducto.appendChild(btnAgregarProducto);
+
+        contenedorProductos.appendChild(divProducto);
+    }
+}
+
+agregarAlCarrito = (id) => {
+    const productosAgregados = stockProductos.find(producto => producto.id === id);
+    carrito.push(productosAgregados);
+    mostrarCarrito(carrito);
+    console.log(carrito);
+    precioTotal();
+}
+
+function mostrarCarrito() {
+
+    contenedorCarrito.innerHTML = "";
+    for (const producto of carrito) {
+        const divProducto = document.createElement('div');
+        divProducto.classList.add('carrito__card');
+
+        const imgProducto = document.createElement('img');
+        imgProducto.classList.add('carrito__card--image');
+        imgProducto.src = producto.img;
+
+        const nombreProducto = document.createElement('h2');
+        nombreProducto.classList.add('carrito__card--nombre');
+        nombreProducto.textContent = producto.name;
+
+        divProducto.appendChild(imgProducto);
+        divProducto.appendChild(nombreProducto);
+
+        contenedorCarrito.appendChild(divProducto);
+    }
+}
+
+function precioTotal() {
+    let cantidadDeProductos = carrito.length;
+    let sumarProductos = carrito.reduce((acumulador, e) => acumulador + e.price, 0);
+    console.log(cantidadDeProductos);
+    console.log(sumarProductos);
+
+    cantidadCarrito.textContent = `Productos: ${cantidadDeProductos}`;
+    totalCarrito.textContent = `TOTAL: $${sumarProductos}`;
+}
+
+function limpiarElCarrito() {
+    contenedorCarrito.innerHTML = "";
+    carrito = [];
+    cantidadCarrito.textContent = `Productos: 0`;
+    totalCarrito.textContent = ` `;
+}
+
+
+/*
 let cantidad = 0
 let carrito = ""
 let continuar = ""
@@ -143,3 +379,4 @@ do {
     }
     continuar = prompt("¿Quieres hacer algo mas? \n\nSi \nNo.");
 } while (continuar == "si")
+*/
