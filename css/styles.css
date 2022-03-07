@@ -282,18 +282,23 @@ button {
     font-size: 1.8rem;
     font-weight: 200;
 }
-.carrito__card--amount {
+.carrito__card--add {
     display: flex;
     font-size: 1rem;
     text-align: center;
+    justify-content: space-between;
+    align-items: baseline;
 }
-.carrito__card--amount p {
+.carrito__card--add p {
     padding: 0 0.5em;
 }
-.carrito__card--eliminar {
-    text-align: right;
+/* .carrito__card--eliminar {
     border: 1px solid #f0f8ff;
     border-radius: 25px;
+    padding: 7px 18px;
+} */
+.carrito__card--amount {
+    display: flex;
 }
 
 /* OVERLAY CARRITO */
