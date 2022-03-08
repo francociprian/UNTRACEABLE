@@ -53,9 +53,9 @@ favoritosAlert = () => {
     })
 }
 
-function mostrarProductos(){
+function mostrarProductos() {
 
-    contenedorProductos.innerHTML='';
+    contenedorProductos.innerHTML = '';
     for (const producto of stockProductos) {
         const divProducto = document.createElement('div');
         divProducto.className = 'stock__card';
@@ -82,15 +82,15 @@ function mostrarProductos(){
     }
 }
 
-function agregarAlCarrito(id){
+function agregarAlCarrito(id) {
     let repetido = carrito.find(producto => producto.id == id)
-    if (repetido){
+    if (repetido) {
         repetido.amount++;
-        document.getElementById(`cantidad${repetido.id}`).innerHTML =`<p id=cantidad${repetido.id}>${repetido.amount}</p>`;
+        document.getElementById(`cantidad${repetido.id}`).innerHTML = `<p id=cantidad${repetido.id}>${repetido.amount}</p>`;
         actualizarCarrito();
         cantidadEnCarrito();
 
-    } else{
+    } else {
         let productoAgregar = stockProductos.find(elemento => elemento.id == id);
         carrito.push(productoAgregar);
         actualizarCarrito();
@@ -113,39 +113,38 @@ function agregarAlCarrito(id){
         contenedorCarrito.appendChild(divCarrito);
 
         const btnSumar = document.getElementById(`sumarProducto${productoAgregar.id}`);
-        btnSumar.addEventListener('click', ()=> {
-            productoAgregar.amount +=1;
+        btnSumar.addEventListener('click', () => {
+            productoAgregar.amount += 1;
             document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id=cantidad${productoAgregar.id}>${productoAgregar.amount}</p>`;
             actualizarCarrito();
             cantidadEnCarrito();
         })
 
         const btnRestar = document.getElementById(`restarProducto${productoAgregar.id}`);
-        btnRestar.addEventListener('click', ()=> {
-            productoAgregar.amount -=1;
+        btnRestar.addEventListener('click', () => {
+            productoAgregar.amount -= 1;
             document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id=cantidad${productoAgregar.id}>${productoAgregar.amount}</p>`;
             actualizarCarrito();
             cantidadEnCarrito();
         })
 
         const btnEliminar = document.getElementById(`btnEliminar${productoAgregar.id}`);
-        btnEliminar.addEventListener('click', ()=>{
+        btnEliminar.addEventListener('click', () => {
             productoAgregar.amount--;
             document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id=cantidad${productoAgregar.id}>${productoAgregar.amount}</p>`;
             actualizarCarrito();
             cantidadEnCarrito();
 
-            if (productoAgregar.amount <=0){
-                btnEliminar.parentElement.remove();
-                carrito = carrito.filter(elemento => elemento.id != productoAgregar.id);
-            }
+            productoAgregar.amount <= 0 && btnEliminar.parentElement.remove();
+            carrito = carrito.filter(elemento => elemento.id != productoAgregar.id);
+
             localStorage.setItem('carrito', JSON.stringify(carrito));
         })
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
     }
-}     
+}
 
 actualizarCarrito = () => {
     let sumarProductos = carrito.reduce((acumulador, e) => acumulador + (e.price * e.amount), 0);
@@ -153,11 +152,7 @@ actualizarCarrito = () => {
 }
 recuperarStorage = () => {
     let recuperarLS = JSON.parse(localStorage.getItem('carrito'));
-    if (recuperarLS) {
-        recuperarLS.forEach(element => (
-            agregarAlCarrito(element.id)
-        ))
-    }
+    recuperarLS && recuperarLS.forEach(element => (agregarAlCarrito(element.id)))
 }
 recuperarStorage();
 
@@ -165,12 +160,11 @@ function cantidadEnCarrito() {
     let cantCarrito = carrito.reduce((acumulador, e) => acumulador + e.amount, 0);
     iconCarrito.textContent = `${cantCarrito}`;
 }
-
 function limpiarElCarrito() {
     carrito = [];
     contenedorCarrito.innerHTML = "";
     totalCarrito.textContent = ` `;
     iconCarrito.innerHTML = "";
-
+    
     localStorage.clear();
 }
