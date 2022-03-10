@@ -1,0 +1,127 @@
+[{
+        "id": "1",
+        "price": 15,
+        "title": "Gorra",
+        "image": "img/gorra.jpg",
+        "size": ""
+    },
+    {
+        "id": "2",
+        "price": 35,
+        "title": "Remera",
+        "image": "img/remera.jpg",
+        "size": "S"
+    },
+    {
+        "id": "3",
+        "price": 35,
+        "title": "Remera",
+        "image": "img/remera.jpg",
+        "size": "M"
+    },
+    {
+        "id": "4",
+        "price": 35,
+        "title": "Remera",
+        "image": "img/remera.jpg",
+        "size": "L"
+    },
+    {
+        "id": "5",
+        "price": 35,
+        "title": "Remera",
+        "image": "img/remera.jpg",
+        "size": "XL"
+    },
+    {
+        "id": "6",
+        "price": 60,
+        "title": "Buzo",
+        "image": "img/buzo.jpg",
+        "size": "S"
+    },
+    {
+        "id": "7",
+        "price": 60,
+        "title": "Buzo",
+        "image": "img/buzo.jpg",
+        "size": "M"
+    },
+    {
+        "id": "8",
+        "price": 60,
+        "title": "Buzo",
+        "image": "img/buzo.jpg",
+        "size": "L"
+    },
+    {
+        "id": "9",
+        "price": 60,
+        "title": "Buzo",
+        "image": "img/buzo.jpg",
+        "size": "XL"
+    },
+    {
+        "id": "10",
+        "price": 110,
+        "title": "Campera",
+        "image": "img/campera.jpg",
+        "size": "S"
+    },
+    {
+        "id": "11",
+        "price": 110,
+        "title": "Campera",
+        "image": "img/campera.jpg",
+        "size": "M"
+    },
+    {
+        "id": "12",
+        "price": 110,
+        "title": "Campera",
+        "image": "img/campera.jpg",
+        "size": "L"
+    },
+    {
+        "id": "13",
+        "price": 110,
+        "title": "Campera",
+        "image": "img/campera.jpg",
+        "size": "XL"
+    },
+    {
+        "id": "14",
+        "price": 75,
+        "title": "Pantalon",
+        "image": "img/pantalon.jpg",
+        "size": "S"
+    },
+    {
+        "id": "15",
+        "price": 75,
+        "title": "Pantalon",
+        "image": "img/pantalon.jpg",
+        "size": "M"
+    },
+    {
+        "id": "16",
+        "price": 75,
+        "title": "Pantalon",
+        "image": "img/pantalon.jpg",
+        "size": "L"
+    },
+    {
+        "id": "17",
+        "price": 75,
+        "title": "Pantalon",
+        "image": "img/pantalon.jpg",
+        "size": "XL"
+    },
+    {
+        "id": "18",
+        "price": 90,
+        "title": "Sneakers",
+        "image": "img/zapatillas.jpg",
+        "size": ""
+    }
+]
