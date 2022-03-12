@@ -235,7 +235,7 @@ const setFavoritos = items => {
 
 
 document.addEventListener('DOMContentLoaded', e => {
-    fetchData();
+    dataFetch();
     if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'));
         pintarCarrito();
