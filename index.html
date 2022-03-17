@@ -20,13 +20,13 @@
         <nav class="menu menu--layout">
             <ul class="menu__nav">
                 <li>
-                    <a class="animation" href="#">Winter Season 2022</a>
+                    <a href="#" class="animation menu__nav--logo">Untraceable&period;</a>
                 </li>
                 <li>
-                    <a class="animation" href="#">Men</a>
+                    <a class="animation display-close" href="#">Sale</a>
                 </li>
                 <li>
-                    <a class="animation" href="#">Women</a>
+                    <a class="animation display-close" href="#">WinterSeason 2022</a>
                 </li>
             </ul>
 
@@ -64,7 +64,7 @@
         <section>
             <div class="container-xl mb-5">
                 <h4 class="productos__titulo">Catalogo De Productos</h4>
-                <div class="row" id="stock__productos"></div>
+                <div class="stock__productos" id="stock__productos"></div>
             </div>
         </section>
 
@@ -188,7 +188,7 @@
     </template>
 
     <template id="template-card">
-        <div class="col-3 col-sm-4 mb-2">
+        <div class="card">
             <div class="card">
                 <img src="" class="card-img-top" alt="...">
                 <button class="btn-fav btn__favoritos">
@@ -196,7 +196,10 @@
                 </button>
                 <div class="card-body">
                     <h5>Titulo</h5>
-                    <p>precio</p>
+                    <div>
+                        <span>$</span>
+                        <p>precio</p>
+                    </div>
                     <button class="btn btn-dark">Comprar</button>
                 </div>
             </div>

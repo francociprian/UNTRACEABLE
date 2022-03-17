@@ -28,6 +28,7 @@ a {
 /* BARRA DE NAVEGACION */
 header {
     position: fixed;
+    background-color: #764245;
     top: 0;
     left: 0;
     width: 100%;
@@ -48,18 +49,27 @@ header {
     font-size: 1.2rem;
     font-weight: 200;
     color: #3C4245;
+    display: flex;
+}
+.menu__nav li {
+    padding-left: 15px;
 }
 .menu__nav li a:hover {
     color: #764245;
 }
+
+.menu__nav li .menu__nav--logo {
+    display: none;
+}
 .menu__btn {
-    width: 100px;
     border: none;
     color: #F7F2E7;
     font-size: 1.2rem;
     display: flex;
-    flex-direction: column;
     position: relative;
+}
+.menu__btn li {
+    padding-left: 15px;
 }
 .menu__btn li button:hover {
     color: #764245;
@@ -119,10 +129,23 @@ header {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
-.card .card-body h5,
+.card .card-body {
+    padding: 0.5rem;
+}
+.card .card-body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .card-body h5 {
+    font-size: 0.8em;
+    padding: 1px 5px;
+    height: 35px;
+} 
 .card .card-body p {
     font-size: 1.2em;
-    padding: 2px 5px;
+    padding: 10px 5px;
+    margin: 0;
 }    
 .btn-dark{
     color: #f0f8ff;
@@ -131,7 +154,7 @@ header {
     border-radius: 35px;
     padding: 5px 35px;
     cursor: pointer;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .btn-dark:hover {
     background-color: #764245;
@@ -418,36 +441,46 @@ footer .fa-arrow-up:hover {
     ul {
         padding-left: 0;
     }
-    header {
-        padding: 1rem;
-    }
-    .menu {
-        justify-content: space-between;
-    }
     .menu__nav {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .menu__nav li {
+        padding-left: 10px;
+    }
+    .menu__nav li .display-close {
+        display: none;
+    }
+    .menu__nav li .menu__nav--logo {
+        font-size: 1.5em;
+        display: block;
     }
     .menu__btn {
-        font-size: 1.8rem;
+
+        align-self: flex-end;
+        padding-right: 15px;
+        font-size: 1.4rem;
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .menu__btn-column {
+    /* .menu__btn-column {
         flex-direction: column;
         align-items: flex-end;
-    }
+    } */
     .container-fluid{
         width: 100%;
     }
     .inicio__text{
         font-size: 4rem;
     }
+
     .stock__productos {
         grid-template-columns: 350px;
         gap: 2rem;
+        justify-content: center;
     }
-    .stock__card--image {
+    .card-img-top {
         width: 350px;
     }
 
