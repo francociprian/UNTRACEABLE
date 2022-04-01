@@ -1,5 +1,3 @@
-
-
 const compra = new Carrito();
 
 const listaCompra = document.querySelector("#lista-compra tbody");
@@ -15,6 +13,7 @@ const address = document.getElementById('address');
 
 
 cargarEventos();
+
 function cargarEventos() {
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -26,7 +25,6 @@ function cargarEventos() {
     });
     
     compra.calcularTotal();
-    // compra.totalIndex();
 
     procesarCompraBtn.addEventListener('click',(e) => procesarCompra(e));
 

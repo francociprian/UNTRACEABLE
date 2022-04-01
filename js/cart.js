@@ -88,7 +88,7 @@ class Carrito{
             productoID = producto.querySelector('i').getAttribute('data-id');
         }
         this.eliminarProductoLocalStorage(productoID);
-        // this.calcularTotal();
+        this.calcularTotal();
         this.totalIndex();
         this.iconNavBar();
     }
@@ -213,21 +213,7 @@ class Carrito{
             location.href = "checkout.html";
         }
     }
-
-    calcularTotal(){
-        let productosLS;
-        let total = 0;
-        productosLS = this.obtenerProductosLocalStorage();
-        productosLS.map(producto => {
-            total += producto.price * producto.cantidad;
-
-            // return
-        })
-
-        const calcularTotalCheckout = document.getElementById('total');
-        calcularTotalCheckout.value = `U$D ${total.toFixed(2)}`;
-    }
-
+    
     totalIndex() {
         let productosLS;
         let total = 0;
@@ -235,12 +221,22 @@ class Carrito{
 
         productosLS.map(producto => {
             total += producto.price * producto.cantidad;
-
-            // return
         })
 
         const totalIndex = document.getElementById('preTotal');
         totalIndex.textContent = `U$D ${parseFloat(total)}`;
+    }
+
+    calcularTotal(){
+        let productosLS;
+        let total = 0;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.map(producto => {
+            total += producto.price * producto.cantidad;
+        })
+
+        const calcularTotalCheckout = document.getElementById('total');
+        calcularTotalCheckout.value = `U$D ${total.toFixed(2)}`;
     }
 
     obtenerEvento(e) {
