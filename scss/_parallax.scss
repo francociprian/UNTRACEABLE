@@ -1,0 +1,16 @@
+.parallax {  
+  background-image: url(../media/index/banner.webp);
+  min-height: 330px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+    & .para-text{
+      padding-top: 36px;
+      color: $white_primary;
+      font-family: 'Coolvetica','sans-serif';
+      font-size: 4rem;
+      // font-weight: 300;
+    }
+}

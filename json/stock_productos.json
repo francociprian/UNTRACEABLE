@@ -1,0 +1,185 @@
+{
+    "women":[
+        {
+            "id": "1",
+            "price": 541,
+            "title": "Barbour Camen Wax",
+            "image": "media/womenn/women1a.webp",
+            "image2": "media/womenn/women1b.webp" 
+        },
+        {
+            "id": "2",
+            "price": 144,
+            "title": "Logo Oversized Teer",
+            "image": "media/womenn/women2a.webp",
+            "image2": "media/womenn/women2b.webp"
+        },
+        {
+            "id": "3",
+            "price": 100,
+            "title": "Alma JM jogger T-shirt",
+            "image": "media/womenn/women3a.webp",
+            "image2": "media/womenn/women3b.webp"
+        },
+        {
+            "id": "4",
+            "price": 270,
+            "title": "W 1996 Retro Nuptse Jacket",
+            "image": "media/womenn/women4a.webp",
+            "image2": "media/womenn/women4b.webp"
+        },
+        {
+            "id": "5",
+            "price": 159,
+            "title": "Pauline Jacket",
+            "image": "media/womenn/women5a.webp",
+            "image2": "media/womenn/women5b.webp"
+        },
+        {
+            "id": "6",
+        "price": 166,
+        "title": "Mario Unisex Vest",
+        "image": "media/womenn/women6a.webp",
+        "image2": "media/womenn/women6b.webp"
+        },
+        {
+            "id": "7",
+        "price": 125,
+        "title": "Paula fine wool turtleneck",
+        "image": "media/womenn/women7a.webp",
+        "image2": "media/womenn/women7b.webp"
+        },
+        {
+            "id": "8",
+        "price": 201,
+        "title": "Bellini Pants",
+        "image": "media/womenn/women8a.webp",
+        "image2": "media/womenn/women8b.webp"
+        },
+        {
+            "id": "9",
+        "price": 105,
+        "title": "Rolando sweatshirt",
+        "image": "media/womenn/women9a.webp",
+        "image2": "media/womenn/women9b.webp"
+        }
+    ],
+
+    "men":[
+        {
+        "id": "10",
+        "price": 140,
+        "title": "Frank Plaid Zip LS Shirt",
+        "image": "media/men/men1a.webp",
+        "image2": "media/men/men1b.webp"
+        },
+        {
+        "id": "11",
+        "price": 227,
+        "title": "Washed Canvas Shop Jacket",
+        "image": "media/men/men2a.webp",
+        "image2": "media/men/men2b.webp"
+        },
+        {
+        "id": "12",
+        "price": 100,
+        "title": "Sami JM planted T-shirt",
+        "image": "media/men/men3a.webp",
+        "image2": "media/men/men3b.webp"
+        },
+        {
+        "id": "13",
+        "price": 96,
+        "title": "Middle Shorts",
+        "image": "media/men/men4a.webp",
+        "image2": "media/men/men4b.webp"
+        },
+        {
+        "id": "14",
+        "price": 360,
+        "title": "Deller tech jacket",
+        "image": "media/men/men5a.webp",
+        "image2": "media/men/men5b.webp"
+        },
+        {
+        "id": "15",
+        "price": 250,
+        "title": "Will heavy twill trousers",
+        "image": "media/men/men6a.webp",
+        "image2": "media/men/men6b.webp"
+        },
+        {
+        "id": "16",
+        "price": 279,
+        "title": "M Sherpa Nuptse Jacket",
+        "image": "media/men/men7a.webp",
+        "image2": "media/men/men7b.webp"
+        },
+        {
+        "id": "17",
+        "price": 245,
+        "title": "Jacquard / AW-Knit . LS",
+        "image": "media/men/men8a.webp",
+        "image2": "media/men/men8b.webp"
+        },
+        {
+        "id": "18",
+        "price": 101,
+        "title": "M Color Block Fleece Pant",
+        "image": "media/men/men9a.webp",
+        "image2": "media/men/men9b.webp"
+        },
+        {
+        "id": "19",
+        "price": 79,
+        "title": "M NRG Kr LS Shooting top",
+        "image": "media/men/men10a.webp",
+        "image2": "media/men/men10b.webp"
+        },
+        {
+        "id": "20",
+        "price": 700,
+        "title": "Casey JC nylon bomber",
+        "image": "media/men/men11a.webp",
+        "image2": "media/men/men11b.webp"
+        },
+        {
+        "id": "21",
+        "price": 144,
+        "title": "Denim Work Pant",
+        "image": "media/men/men12a.webp",
+        "image2": "media/men/men12b.webp"
+        }
+    ],
+
+    "newArrivals":[
+        {
+        "id": "19",
+        "price": 79,
+        "title": "M NRG Kr LS Shooting top",
+        "image": "media/men/men10a.webp",
+        "image2": "media/men/men10b.webp"
+        },
+        {
+        "id": "5",
+        "price": 159,
+        "title": "Pauline Jacket",
+        "image": "media/womenn/women5a.webp",
+        "image2": "media/womenn/women5b.webp"      
+        },
+        {
+        "id": "12",
+        "price": 100,
+        "title": "Sami JM planted T-shirt",
+        "image": "media/men/men3a.webp",
+        "image2": "media/men/men3b.webp"
+        },
+        {
+        "id": "2",
+        "price": 144,
+        "title": "Logo Oversized Teer",
+        "image": "media/womenn/women2a.webp",
+        "image2": "media/womenn/women2b.webp"
+        }
+    ]    
+}

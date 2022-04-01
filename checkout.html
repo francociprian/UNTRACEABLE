@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Everything is style">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+  <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="bootstrapCompiled/css/bootstrap.css">
+  <link rel="stylesheet" href="js/pushbar/pushbar.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Untraceable - Checkout</title>
+</head>
+
+<body>
+
+  <nav class="navbarFont navbar sticky-top navbar-expand-sm navbar-light bg-white">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--logo mobile version-->
+      <a class="navbar-brand" href="index.html">
+        <span class="logo d-sm-none d-sm-block">Untraceable</span>
+      </a>
+      <!--logo mobile version-->
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo03">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="men.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Men
+            </a>
+            <ul class="dropdown-menu navbarFont" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="men.html">New Arrivals</a></li>
+              <li><a class="dropdown-item" href="men.html">T-Shirts</a></li>
+              <li><a class="dropdown-item" href="men.html">Pants</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Women
+            </a>
+            <ul class="dropdown-menu navbarFont" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="women.html">New Arrivals</a></li>
+              <li><a class="dropdown-item" href="women.html">T-shirts</a></li>
+              <li><a class="dropdown-item" href="women.html">Pants</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--logo desktop version-->
+        <a class="navbar-brand d-none d-sm-block mx-auto" href="index.html">
+          Untraceable
+        </a>
+        <!--logo desktop version-->
+
+      </div>
+      <ul class="navbar-nav customNavbar navbarCollapse">
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#wishlistModal" href="#"><i
+              class="bi bi-heart icons"></i></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#accountModal" href="#"><i
+              class="bi bi-person icons"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <main>
+
+    <div class="container-sm mt-3">
+      
+      <h2 class="mb-3">Checkout</h2>
+      <p>Give us your information and we will make sure your products arrive safely to your home!</p>
+
+      <form class="row g-3" id="procesar-pago" action="#" method="POST">
+        <div class="col-md-6">
+          <label for="cliente" class="form-label h5">Client*</label>
+          <input type="text" class="form-control" id="cliente" placeholder="Enter client name" name="destinatario">
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label h5">E-mail*</label>
+            <input type="text" class="form-control" id="correo" placeholder="Enter your email" name="cc_to">
+        </div>
+        <div class="col-6">
+          <label for="address" class="form-label h5">Address*</label>
+          <input type="text" class="form-control" id="address" placeholder="P. Sherman, Calle Wallaby 42" name="address">
+        </div>
+        <div class="col-md-4">
+          <label for="city" class="form-label h5">City</label>
+          <input type="text" class="form-control" id="city" placeholder="Sidney">
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label h5">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+
+        <div id="carrito" class="form-group  table-scss mt-5">
+          <table class="form-group table table-responsive-sm table-hover" id="lista-compra" >
+            <thead>
+                <tr>
+                    <td scope="col"></td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Price</td>
+                    <td scope="col">Amount</td>
+                    <td scope="row">Subtotal</td>
+                    <td scope="col"></td>
+                </tr>
+
+            </thead>
+            <tbody >
+
+            </tbody>
+            <tr>
+                <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                <th scope="col">
+                    <input id="total" name="monto" class="font-weight-bold border-0" readonly value="0" style="background-color: white;"></input>
+                </th>
+
+            </tr>
+
+          </table>
+        </div>
+
+        <div class="row justify-content-center p-4" id="loaders">
+          <img id="cargando" src="media/load.svg" width="100px" >
+        </div>
+
+        <div class="row justify-content-center pb-5 pt-2">
+          <div class="col-md-4 mb-2 text-center">
+            <a href="index.html" class="btn btn-info btn-block">Keep buying</a>
+          </div>
+          <div class="col-md-4 mb-2 text-center">
+            <input type="submit" class="btn btn-success btn-block" id="procesar-compra" value="Make a purchase">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-grey py-5" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="logo-part d-flex flex-column justify-content-center">
+            <p class="logo-footer">Untraceable</p>
+            <p class="mb-0 footerSize text-center">It’s all about <b>style.</b></p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <p class="footerFont"> About Company</p>
+          <p>We create clothing with <i>minimal</i> designs and <b>maximum</b> impact. <br> Everything we do in
+            Untraceable is meant to be <i>remembered.</i></p>
+        </div>
+        <div class="col-md-3">
+          <p class="footerFont">Contact</p>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/francociprian" class="btn-footer">More
+            Info </a><br>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/francociprian"
+            class="btn-footer">Contact Us</a>
+        </div>
+        <div class="col-md-3">
+          <p class="footerFont">Socials</p>
+          <div class="col-md-4 social d-flex flex-column">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/francociprian">Instagram</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/francociprian">Facebook</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/francociprian">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div id="modalContainer">
+
+    <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mx-auto fs-4" id="exampleModalLabel">Add to wishlist</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            You must have an Untraceable account and be signed in to save items to your wishlist
+          </div>
+          <div class="modal-footer d-flex flex-column">
+            <button class="button button__flip" data-bs-target="#WIPModal" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Sign in</button>
+            <button class="button button__line" data-bs-target="#WIPModal" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Create an account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mx-auto fs-4" id="exampleModalLabel">My account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            Create an Untraceable account or log in to view your orders, return or adjust your personal information
+          </div>
+          <div class="modal-footer d-flex flex-column">
+            <button class="button button__flip" data-bs-target="#WIPModal" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Sign in</button>
+            <button class="button button__line" data-bs-target="#WIPModal" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Create an account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="WIPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mx-auto fs-4" id="exampleModalLabel">Work in progress</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center d-flex flex-column align-items-center">
+            This feature is not yet available
+            <img src="media/smile.svg" class="smileFace" alt="Smile face">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="bootstrapCompiled/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/pushbar/pushbar.js"></script>
+  <script type="text/javascript">
+    const pushbar = new Pushbar({
+      blur: true,
+      overlay: true,
+    });
+    </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>

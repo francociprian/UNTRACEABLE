@@ -1,0 +1,92 @@
+
+#load{
+    overflow-y:hidden;
+}
+
+
+.main{
+    height: 800px;
+    color: $white_primary;
+    background-color: $black_primary;
+    p{
+      color: $white_primary;
+      text-decoration: none;
+      background-color: $black_primary;
+      padding-top: 10px;
+      padding-right: 14px;
+      line-height: 30px;
+    }
+    &__men {    
+        background: url(../media/index/main1.webp) no-repeat;
+        background-size: cover;
+    }
+    &__women {
+        background: url(../media/index/main2.webp) no-repeat;
+        background-size: cover;
+    }
+    &__focus {
+            &:hover a {
+              opacity: 0.5; 
+            }
+            a:hover {
+              opacity: 1;
+            }
+            a{
+                opacity: 1;
+                transition: opacity .60s ease-in-out;
+                -moz-transition: opacity .60s ease-in-out;
+                -webkit-transition: opacity .60s ease-in-out;
+            }
+    }
+    
+}
+.corazon{
+    position: absolute;
+    right: 4px;
+    bottom: 0px;
+}
+.icons2{
+    font-size: 36px;
+}
+.hero__main{
+    color: $white_primary;
+    height: 890px;
+    background: url(../media/index/bannerIndex.webp);
+    background-position: center;
+    background-size: cover;
+    &--line-one {
+        font-size: 4rem;
+    font-weight: 500;
+    }
+}
+.heroimgMen{
+    background-image: url(../media/index/bannerMen.webp);
+    height: 395px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    & p {
+        color: $white_primary;
+        font-size: 4rem;
+    }
+}
+.heroimgWomen{
+    background-image: url(../media/index/bannerWomen.webp);
+    height: 395px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    & p {
+        color: $white_primary;
+        font-size: 4rem;
+    }
+}
+@media all and (max-width: 576px){
+    .main{
+        height: 1350px;
+    }
+}

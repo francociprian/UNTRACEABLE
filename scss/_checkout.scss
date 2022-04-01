@@ -1,0 +1,114 @@
+// .container-chekout{
+//     height: 58vh;
+// }
+.title {
+    margin-bottom: 5vh
+}
+
+.card {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+@media(max-width:767px) {
+    .card {
+        margin: 3vh auto
+    }
+}
+
+.cartt {
+    background-color: $white_primary;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .cartt {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.summary {
+    background-color: $white_primary;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65)
+}
+
+@media(max-width:767px) {
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem
+    }
+}
+
+.summary .col-2 {
+    padding: 0
+}
+
+.summary .col-10 {
+    padding: 0
+}
+
+.cartCheckout .row {
+    margin: 0
+}
+
+.title b {
+    font-size: 1.5rem
+}
+
+.mainn {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%
+}
+
+.cartCheckout .col-2,
+.col {
+    padding: 0 1vh
+}
+.close {
+    margin-left: auto;
+    font-size: 0.7rem
+}
+.back-to-shop {
+    margin-top: 4.5rem
+}
+
+#code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}
+
+#cargando {
+    display: none;
+}
+
+.table-scss {
+    table {
+        tbody {
+            tr {
+                td {
+                    padding-bottom: 1rem;
+                    img{
+                        width: 60px;
+                    }
+                    button .bi-x {
+                        color: $black_primary;
+                    }
+                }
+            }
+        }
+    }
+}
