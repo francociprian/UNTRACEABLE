@@ -48,10 +48,10 @@
 
       </div>
       <ul class="navbar-nav customNavbar navbarCollapse">
-        <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#wishlistModal" href="#"><i
+        <li class="nav-items"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#wishlistModal" href="#"><i
               class="bi bi-heart icons"></i></a>
         </li>
-        <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#accountModal" href="#"><i
+        <li class="nav-items"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#accountModal" href="#"><i
               class="bi bi-person icons"></i></a>
         </li>
       </ul>
@@ -76,7 +76,7 @@
           <label for="email" class="form-label h5">E-mail*</label>
             <input type="text" class="form-control" id="correo" placeholder="Enter your email" name="cc_to">
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
           <label for="address" class="form-label h5">Address*</label>
           <input type="text" class="form-control" id="address" placeholder="P. Sherman, Calle Wallaby 42" name="address">
         </div>
@@ -89,31 +89,38 @@
           <input type="text" class="form-control" id="inputZip">
         </div>
 
-        <div id="carrito" class="form-group  table-scss mt-5">
-          <table class="form-group table table-responsive-sm table-hover" id="lista-compra" >
-            <thead>
-                <tr>
-                    <td scope="col"></td>
-                    <td scope="col">Name</td>
-                    <td scope="col">Price</td>
-                    <td scope="col">Amount</td>
-                    <td scope="row">Subtotal</td>
-                    <td scope="col"></td>
-                </tr>
-
-            </thead>
-            <tbody >
-
-            </tbody>
-            <tr>
-                <th colspan="4" scope="col" class="text-right">TOTAL :</th>
-                <th scope="col">
-                    <input id="total" name="monto" class="font-weight-bold border-0" readonly value="0" style="background-color: white;"></input>
-                </th>
-
-            </tr>
-
-          </table>
+        <div id="carrito" class="form-group table-scss mt-5">
+          <div>
+            <table class="form-group table  table-condensed table-striped table-hover" id="lista-compra" >
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th >Name</th>
+                      <th >Price</th>
+                      <th >Amount</th>
+                      <th >Subtotal</th>
+                      <th></th>
+                  </tr>
+  
+              </thead>
+              <tbody >
+                
+              <!--PRODUCTOS -->
+  
+              </tbody>
+              <tfoot>
+                  <th class="text-right">TOTAL:</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th colspan="2">
+                      <span class="d-flex gap-1">U$D<input id="total" name="monto" class="font-weight-bold border-0" readonly value="0" style="background-color: white;"></input></span>
+                  </th>
+  
+              </tfoot>
+  
+            </table>
+          </div>
         </div>
 
         <div class="row justify-content-center p-4" id="loaders">
@@ -149,7 +156,7 @@
         &copy; Copyright <strong><span>Untraceable</span></strong>. All Rights Reserved
       </div>
       <div class="designed">
-        Designed by <a class="text-muted text-decoration-none" href="https://francociprian.github.io/" target="_blank">FRANChref="https://github.com/francociprian" target="_blank"2022</a>
+        Designed by <a class="text-muted text-decoration-none" href="https://francociprian.github.io/" target="_blank">FRANCOCIPRIAN2022</a>
       </div> 
     </div>
     <div class="d-flex align-items-center justify-content-center pt-3">

@@ -891,9 +891,21 @@ footer p {
 #cargando {
   display: none; }
 
-.table-scss table tbody tr td {
-  padding-bottom: 1rem; }
-  .table-scss table tbody tr td img {
-    width: 60px; }
-  .table-scss table tbody tr td button .bi-x {
-    color: black; }
+.table-scss table {
+  table-layout: fixed; }
+  .table-scss table thead tr th:nth-child(1) {
+    width: 15%; }
+  .table-scss table thead tr th:nth-child(2) {
+    width: 20%; }
+  .table-scss table thead tr th:nth-child(3) {
+    width: 10%; }
+  .table-scss table thead tr th:nth-child(5) {
+    width: 10%; }
+  .table-scss table thead tr th:nth-child(6) {
+    width: 10%; }
+  .table-scss table tbody tr td {
+    padding-bottom: 1rem; }
+    .table-scss table tbody tr td img {
+      width: 60px; }
+    .table-scss table tbody tr td button .bi-x {
+      color: black; }

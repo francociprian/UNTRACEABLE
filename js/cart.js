@@ -6,7 +6,7 @@ class Carrito{
             this.leerDatosProducto(producto);
         }
         e.preventDefault();
-        this.iconNavBar()
+        this.iconNavCarito()
     }
 
     leerDatosProducto(producto){
@@ -70,10 +70,10 @@ class Carrito{
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
-        this.totalIndex();
+        this.totalPushBar();
     }
 
-    iconNavBar(){
+    iconNavCarito(){
         let items = this.obtenerProductosLocalStorage();
         let iconCart = items.reduce((acc, {cantidad}) => acc + cantidad, 0)
         iconCarrito.innerText = iconCart
@@ -88,9 +88,9 @@ class Carrito{
             productoID = producto.querySelector('i').getAttribute('data-id');
         }
         this.eliminarProductoLocalStorage(productoID);
+        this.totalPushBar();
+        this.iconNavCarito();
         this.calcularTotal();
-        this.totalIndex();
-        this.iconNavBar();
     }
 
     vaciarCarrito(e){
@@ -99,8 +99,8 @@ class Carrito{
             listaProductos.removeChild(listaProductos.firstChild);
         }
         this.vaciarLocalStorage();
-        this.totalIndex();
-        this.iconNavBar();
+        this.totalPushBar();
+        this.iconNavCarito();
 
         return false;
     }
@@ -144,11 +144,11 @@ class Carrito{
                 `;
             listaProductos.appendChild(row);
         });
-        this.totalIndex();
-        this.iconNavBar();
+        this.totalPushBar();
+        this.iconNavCarito();
     }
     
-    leerLocalStorageCompra(){
+    leerLocalStorageCheckout(){
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto){
@@ -163,7 +163,9 @@ class Carrito{
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
-                <td id='subtotales'>$${producto.price * producto.cantidad}</td>
+                <td>
+                    <span id='subtotales'>${producto.price * producto.cantidad}</span>
+                </td>
                 <td>
                     <button class="pushbar__container--delete text-decoration-none text-light">
                         <i class="bi bi-x" data-id="${producto.id}"></i>
@@ -214,7 +216,7 @@ class Carrito{
         }
     }
     
-    totalIndex() {
+    totalPushBar() {
         let productosLS;
         let total = 0;
         productosLS = this.obtenerProductosLocalStorage();
@@ -224,7 +226,7 @@ class Carrito{
         })
 
         const totalIndex = document.getElementById('preTotal');
-        totalIndex.textContent = `U$D ${parseFloat(total)}`;
+        totalIndex.textContent = parseFloat(total);
     }
 
     calcularTotal(){
@@ -236,7 +238,7 @@ class Carrito{
         })
 
         const calcularTotalCheckout = document.getElementById('total');
-        calcularTotalCheckout.value = `U$D ${total.toFixed(2)}`;
+        calcularTotalCheckout.value = total;
     }
 
     obtenerEvento(e) {
@@ -252,14 +254,13 @@ class Carrito{
             productosLS.forEach(function (productoLS, index) {
                 if (productoLS.id === id) {
                     productoLS.cantidad = cantidad;                    
-                    actualizarMontos[index].innerHTML = `$${Number(cantidad * productosLS[index].price)}`;
-                    console.log(`$${Number(cantidad * productosLS[index].price)}`)
+                    actualizarMontos[index].textContent = cantidad * productosLS[index].price;
                 }    
             });
             localStorage.setItem('productos', JSON.stringify(productosLS));
             
         } else {
-            console.log("click afuera");
+            console.log("Error");
         }
         this.calcularTotal();
     }

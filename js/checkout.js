@@ -1,9 +1,7 @@
 const compra = new Carrito();
 
 const listaCompra = document.querySelector("#lista-compra tbody");
-
 const carrito = document.getElementById('carrito');
-
 
 const procesarCompraBtn = document.getElementById('procesar-compra');
 
@@ -17,7 +15,7 @@ cargarEventos();
 function cargarEventos() {
 
     document.addEventListener("DOMContentLoaded", () => {
-		compra.leerLocalStorageCompra();
+		compra.leerLocalStorageCheckout();
 	});
     
     carrito.addEventListener('click', (e) => { 
@@ -37,7 +35,7 @@ function cargarEventos() {
 }
 
 
-function generarTabla(productosLS) {
+function generarTablaEmailJs(productosLS) {
 
     let montoTotal = document.getElementById('total');
 
@@ -134,7 +132,7 @@ function procesarCompra(e) {
         textArea.hidden = true;
         productosLS = compra.obtenerProductosLocalStorage();
 
-        textArea.innerHTML = generarTabla(productosLS).innerHTML;
+        textArea.innerHTML = generarTablaEmailJs(productosLS).innerHTML;
 
         carrito.appendChild(textArea);
         
@@ -167,7 +165,7 @@ function procesarCompra(e) {
                         }, 2000);
                     }, (err) => {
                         cargandoGif.style.display = 'none';
-                        alert("Error al enviar el email\r\n Response:\n " + JSON.stringify(err));
+                        alert("Error sending email\r\n Response:\n " + JSON.stringify(err));
                     });
         });
 
