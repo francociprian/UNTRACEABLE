@@ -1,7 +1,6 @@
 <h1 align="center">UNTRACEABLE</h1><br>
 
 ## Proyecto Javascript CODERHOUSE
-
 <br>
 
 <p align="center">
